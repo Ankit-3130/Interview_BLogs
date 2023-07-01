@@ -13,7 +13,7 @@ require('dotenv').config();
 app.use(express.urlencoded( { extended: true } ));
 app.use(express.static('public'));
 app.use(expressLayouts);
-
+ 
 app.use(cookieParser('InterViewBlog'));
 app.use(session({
   secret: 'InterviewBlogsPage',

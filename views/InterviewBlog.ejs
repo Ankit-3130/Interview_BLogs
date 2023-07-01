@@ -1,0 +1,41 @@
+<% if(Blog != null ) { %>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><%- Blog.name %></li>
+    </ol>
+  </nav>
+
+
+  <div class="row">
+
+    <div class="col-12 col-md-4">
+      <img src="/uploads/<%- Blog.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- Blog.name %>" loading="lazy">
+    </div>
+
+    <div class="col-12 col-md-8">
+      <div class="row">
+        <div class="col-12"><h1><%- Blog.name %></h1></div>
+        <div class="col-12 mb-4"><i class="bi bi-tag"></i> <%- Blog.category %></div>
+        <div class="col-12" style="white-space: pre-line;">
+          <h4>Interview Overview</h4>
+          <%- Blog.description %>
+        </div>
+      </div>
+
+      <div class="row pt-4">
+        <div class="col-12">
+          <h4>Some useful Tips!!</h4>
+          <ul class="list-group list-group-flush">
+            <% Blog.Tips.forEach(function(tip, index){ %>
+              <li class="list-group-item"><%= tip %></li>
+            <% }) %>
+          </ul> 
+        </div>
+      </div>
+    </div>
+  </div>
+<% } else { %>
+  <p>No item found.</p>
+<% } %>
