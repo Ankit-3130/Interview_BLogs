@@ -1,12 +1,13 @@
 <div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
-  <div class="col-12 col-lg-6" >
-    <img src="/img/indexpage.jpg" width="607" height="510" style="border-radius: 10px;" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Interview Blogs">
+  <div class="col-12 col-lg-6">
+    <img src="/img/indexpage.jpg" width="607" height="510" style="border-radius: 10px;"
+      class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Interview Blogs">
   </div>
 
   <div class="col-12 col-lg-6">
     <h2 class="display-5 fw-bold mb-3">Unlocking the Secrets of Successful Interviews: Candid Experiences Shared</h2>
     <p class="lead">
-      
+
     </p>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
@@ -25,7 +26,7 @@
 <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
 
 
-  <% if(categories != '') { %>
+  <% if(categories !='' ) { %>
     <% categories.forEach(function(category, index) { %>
       <a href="/categories/<%- category.name %>" class="col text-center category__link">
         <div class="category__img shadow">
@@ -33,15 +34,15 @@
         </div>
         <div class="pt-1"><%- category.name %></div>
       </a>
-    <% }) %>
-  <% } %>
+      <% }) %>
+        <% } %>
 
-  <a href="/categories" class="col text-center category__link">
-    <div class="category__img shadow">
-      <img src="img/view-all.png" height='100' alt="View All Categories" loading="lazy">
-    </div>
-    <div class="pt-1">View All</div>
-  </a>
+          <a href="/categories" class="col text-center category__link">
+            <div class="category__img shadow">
+              <img src="img/view-all.png" height='100' alt="View All Categories" loading="lazy">
+            </div>
+            <div class="pt-1">View All</div>
+          </a>
 
 </div>
 <!-- Categories End -->
@@ -52,24 +53,26 @@
 
 <section class="pb-4 pt-4">
   <div class="d-flex mb-2 align-items-center">
-     <h2>Latest Interviews</h2>
+    <h2>Latest Interviews</h2>
     <a href="/explore-latest" class="ms-auto">View More</a>
   </div>
 
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
 
-    <% if(data != '') { %>
+    <% if(data !='' ) { %>
       <% data.latest.forEach(function(blog, index){ %>
-      <a href="/interview/<%= blog._id %>" class="col text-center category__link">
-        <div class="category__img category__img--large shadow">
-          <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
-        </div>
-        <div class="pt-1"><%= blog.name %></div>
-      </a>
-      <% }) %>
-    <% } else { %>
-      <p>No items found.</p>
-    <% } %>
+        <a href="/interview/<%= blog._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
+          </div>
+          <div class="pt-1">
+            <%= blog.name %>
+          </div>
+        </a>
+        <% }) %>
+          <% } else { %>
+            <p>No items found.</p>
+            <% } %>
   </div>
 
 </section>
@@ -83,18 +86,20 @@
   </div>
 
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-    <% if(typeof data.software !== 'undefined' && data.software.length > 0) { %>
+    <% if(typeof data.software !=='undefined' && data.software.length> 0) { %>
       <% data.software.forEach(function(blog, index){ %>
-      <a href="/interview/<%= blog._id %>" class="col text-center category__link">
-        <div class="category__img category__img--large shadow">
-          <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
-        </div>
-        <div class="pt-1"><%= blog.name %></div>
-      </a>
-      <% }) %>
-    <% } else { %>
-      <p>No items found.</p>
-    <% } %>
+        <a href="/interview/<%= blog._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
+          </div>
+          <div class="pt-1">
+            <%= blog.name %>
+          </div>
+        </a>
+        <% }) %>
+          <% } else { %>
+            <p>No items found.</p>
+            <% } %>
   </div>
 </section>
 <!-- Software Development End -->
@@ -107,18 +112,20 @@
   </div>
 
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-    <% if(data.DataAnalyst != '') { %>
+    <% if(data.DataAnalyst !='' ) { %>
       <% data.DataAnalyst.forEach(function(blog, index){ %>
-      <a href="/interview/<%= blog._id %>" class="col text-center category__link">
-        <div class="category__img category__img--large shadow">
-          <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
-        </div>
-        <div class="pt-1"><%= blog.name %></div>
-      </a>
-      <% }) %>
-    <% } else { %>
-      <p>No items found.</p>
-    <% } %>
+        <a href="/interview/<%= blog._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
+          </div>
+          <div class="pt-1">
+            <%= blog.name %>
+          </div>
+        </a>
+        <% }) %>
+          <% } else { %>
+            <p>No items found.</p>
+            <% } %>
   </div>
 </section>
 <!--Data Analyst End -->
@@ -131,18 +138,20 @@
   </div>
 
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-    <% if(data.Consult != '') { %>
+    <% if(data.Consult !='' ) { %>
       <% data.Consult.forEach(function(blog, index){ %>
-      <a href="/interview/<%= blog._id %>" class="col text-center category__link">
-        <div class="category__img category__img--large shadow">
-          <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
-        </div>
-        <div class="pt-1"><%= blog.name %></div>
-      </a>
-      <% }) %>
-    <% } else { %>
-      <p>No items found.</p>
-    <% } %>
+        <a href="/interview/<%= blog._id %>" class="col text-center category__link">
+          <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
+          </div>
+          <div class="pt-1">
+            <%= blog.name %>
+          </div>
+        </a>
+        <% }) %>
+          <% } else { %>
+            <p>No items found.</p>
+            <% } %>
   </div>
 </section>
 <!-- Consultancy End -->
@@ -150,7 +159,8 @@
 
 <!-- Submit - Start -->
 <section class="px-4 py-5 my-5 text-center">
-  <img src="/img/img3.jpg" class="d-block mx-auto mb-4 img-fluid" alt="Publish your recipe for FREE today" width="566" height="208" loading="lazy">
+  <img src="/img/img3.jpg" class="d-block mx-auto mb-4 img-fluid" alt="Publish your recipe for FREE today" width="566"
+    height="208" loading="lazy">
   <h1 class="display-5 fw-bold">Recently Interviewed !!</h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4">Then Recount Unforgettable Interview Moments And Share It Now !!</p>
@@ -159,5 +169,5 @@
     </div>
   </div>
 </section>
- 
+
 <!-- Submit - End -->
